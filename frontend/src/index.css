@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  @apply font-sans;
+}
+/* In your main CSS file (e.g., globals.css) */
+
+/* Targets the selected option background and text color for most browsers */
+select option:checked {
+  background-color: #e5e7eb; /* Tailwind's gray-200 for a light grey background */
+  color: #1f2937; /* Tailwind's gray-900 for dark text */
+}
+
+/* Fallback/additional styling for some browsers or scenarios where :checked isn't fully applied */
+select option:focus {
+  background-color: #e5e7eb; /* Tailwind's gray-200 */
+  color: #1f2937; /* Tailwind's gray-900 */
+}
+
+/* For the actual text selection highlight within the option (if user drags mouse over text) */
+select option::selection {
+  background-color: #e5e7eb; /* Tailwind's gray-200 */
+  color: #1f2937; /* Tailwind's gray-900 */
+}
+
+/* To ensure options have a white background by default and respond to hover */
+select option {
+  background-color: white; /* Default background for options */
+  color: black; /* Default text color for options */
+}
+
+/* Optional: Add hover effect to options for better user experience */
+select option:hover {
+  background-color: #f3f4f6; /* Tailwind's gray-100 for a slightly lighter hover */
+}
