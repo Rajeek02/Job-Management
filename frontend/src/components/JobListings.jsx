@@ -8,7 +8,8 @@ function JobListings({ localJobs, filters }) {
 
  const fetchJobs = async () => {
   try {
-    const response = await axios.get('http://localhost:5000/api/jobs'); // 🔥 Use full URL
+    const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/jobs`);
+ // 🔥 Use full URL
     const formatted = response.data.map((job) => ({
       title: job.title || '',
       location: job.location || '',
