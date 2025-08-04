@@ -42,7 +42,8 @@ function App() {
           if (!isNaN(max)) params.append('salaryTo', max);
         }
 
-        const response = await axios.get(`http://localhost:5000/api/jobs?${params.toString()}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/jobs?${params.toString()}`);
+
         setJobs(response.data);
       } catch (error) {
         console.error('❌ Error fetching filtered jobs:', error);
